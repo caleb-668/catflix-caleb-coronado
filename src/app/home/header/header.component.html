@@ -1,0 +1,26 @@
+<header>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+      width="40" height="40" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+    </svg>
+  </label>
+  <figure class="logo">
+    <img src="../../../assets/45110010ec84124f459308e070295332.png" alt="Logo" (click)="redirectToHome()">
+  </figure>
+  <ul>
+    <a href="/home" style="--clr:#902eff">
+      <span>Home</span><i></i>
+    </a>
+    <a href="/" style="--clr:#1e9bff" (click)="logOut()">
+      <span>Log Out</span><i></i>
+    </a>
+    <li ngClass="text-white font-extrabold" *ngIf="userEmail" class="user-email">{{ userEmail }}</li>
+    <li *ngIf="isAdmin">
+      <a href="javascript:void(0)" style="--clr:#ff5733" (click)="redirectToDashboard()">
+        <span>Dashboard</span><i></i>
+      </a>
+    </li>
+  </ul>
+</header>

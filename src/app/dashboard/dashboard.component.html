@@ -1,0 +1,33 @@
+<!-- movie-table.component.html -->
+<app-header></app-header>
+<h1 class="text-transparent">work!</h1>
+<h1 class="text-transparent">work!</h1>
+<h1 class="text-transparent">work!</h1>
+<section class="header_fixed">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Banner</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Duration</th>
+        <th>Action</th> <!-- add or delete movie -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies; let i = index">
+        <td>{{ movie.category }}</td>
+        <td><img [src]="movie.banner" /></td>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.description }}</td>
+        <td>{{ movie.duration }}</td>
+        <td>
+          <button (click)="openModal()"><i class="fa-solid fa-plus" style="color: #000000;"></i></button>
+          <button (click)="deleteMovie(i)"><i class="fa-solid fa-trash" style="color: #000000;"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<app-add-movie *ngIf="showModal" (close)="closeModal()"></app-add-movie>

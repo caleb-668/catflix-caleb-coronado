@@ -1,0 +1,25 @@
+<!-- add-movie.component.html -->
+<div class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <form (ngSubmit)="addMovie()">
+        <label for="category">Category:</label>
+        <input type="text" id="category" [(ngModel)]="movie.category" name="category" required />
+  
+        <label for="banner">Banner URL:</label>
+        <input type="text" id="banner" [(ngModel)]="movie.banner" name="banner" required />
+  
+        <label for="title">Title:</label>
+        <input type="text" id="title" [(ngModel)]="movie.title" name="title" required />
+  
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="movie.description" name="description" required></textarea>
+  
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration" [(ngModel)]="movie.duration" name="duration" required />
+  
+        <button type="submit">Add Movie</button>
+      </form>
+    </div>
+  </div>
+  
